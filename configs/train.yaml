@@ -1,0 +1,70 @@
+seed: 1234
+torch_home: ""
+froze: False
+
+dataset:
+  name: "ffpp"
+  ffpp:
+    data_root: ""
+    data_types:
+    compressions: ""
+    num_frames:
+    methods: ["youtube", "Deepfakes", "Face2Face", "FaceSwap", "NeuralTextures"]
+    has_mask: False
+
+transform:
+  image_size: 299
+  mean: [0.5, 0.5, 0.5]
+  std: [0.5, 0.5, 0.5]
+
+gpu: 0,1
+model:
+  name: "BinaryClassifier"
+  ckpt_path:
+  params:
+    encoder: "saia_efficientnet-b4"
+    num_classes: 1
+    drop_rate: 0.2
+    has_feature: False
+    feature_dim: 128
+
+loss:
+  name: "BCELoss"
+  lambda: 1.0
+  b:
+
+optimizer:
+  name: "Adam"
+  params:
+    lr:
+    weight_decay:
+
+scheduler:
+  name: "StepLR"
+  params:
+    step_size:
+    gamma:
+
+train:
+  epochs:
+  batch_size:
+  print_interval: 100
+  val_interval: 1
+
+val:
+  batch_size:
+
+test:
+  batch_size:
+  record_results: True
+  threshold:
+
+wandb:
+  project:
+  group: Final
+  job_type:
+  id:
+  resume:
+  save_code: True
+  name:
+  notes:

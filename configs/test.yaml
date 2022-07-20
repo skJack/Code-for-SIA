@@ -1,0 +1,23 @@
+torch_home: ""
+types: "both"
+dataset:
+  name: "ffpp"
+  pair: False
+  ffpp:
+    data_root: ""
+    data_types:
+    compressions: ""
+    num_frames:
+    methods:
+    alb: True
+    balance: True
+
+test:
+  batch_size: 32
+  threshold: 0.5
+  record_results: True
+
+train:
+  batch_size: 32
+  threshold: 0.5
+  record_results: True
